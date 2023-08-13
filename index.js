@@ -6,17 +6,6 @@ const PORT = 5000
 const server = http.createServer((req, res) => {
     console.log({path: req.url, method: req.method})
 
-
-    // if  (req.url === '/') {
-    //     const file = fs.readFileSync('./index.html')
-    //     res.setHeader('content-type','text/html')
-    //     // knowing the status
-    //     res.writeHead(200)
-    //     // sending data to the client
-    //     res.write(file)
-    //     res.end()
-    // }
-
     if (req.url.endsWith('.html') && req.method === 'GET') {
         try {
             const splitUrl = req.url.split('/')
